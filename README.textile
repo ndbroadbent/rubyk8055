@@ -1,5 +1,9 @@
 h1. RubyK8055
 
+This is a ruby wrapper for the 'libk8055' linux driver, found here: [http://libk8055.sourceforge.net/]
+I highly recommend downloading and installing that driver first, and making sure that you can get your
+K8055 board working under linux first.
+
 h3. Compiling and Installing
 
 * To compile the wrapper, you must have the 'libusb' (v 0.1.12 or lower) library installed.
