@@ -12,6 +12,12 @@ bc. ruby extconf.rb
 make
 make install
 
+* If you have the rspec gem installed, connect your K8055 and run the following, to test that the wrapper works with your K8055.
+
+bc. spec rubyk8055_spec.rb
+
+** This will run tests with your K8055 and make sure all the methods are doing what they are supposed to.
+
 * Run the following to test that you can load the wrapper:
 
 bc. irb -r irb_test.rb
