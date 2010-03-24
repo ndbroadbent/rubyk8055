@@ -38,6 +38,8 @@ describe RubyK8055 do
   it 'should be able to set digital outputs' do
     1.upto(8) do |i|
       @r.set_digital(i, true).should == true
+      @r.digital_off(i).should == true
+      @r.digital_on(i).should == true
     end
     @r.clear_all_digital.should == true
     @r.set_all_digital.should == true
