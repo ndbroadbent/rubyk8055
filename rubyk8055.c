@@ -337,38 +337,11 @@ void Init_rubyk8055() {
     rb_define_method(RubyK8055, "reset_counter", method_reset_counter, 1);
     rb_define_method(RubyK8055, "set_debounce", method_set_debounce, 2);
 
-    // reopen the class and define some handy attr_accessors
+    // reopen the class and define some handy attr_accessors..
     rb_eval_string("module USB \n\
                         class RubyK8055 \n\
                             attr_accessor :connected, :board_address \n\
                         end \n\
                     end");
 }
-
-
-/*
-
--------- Implemented: --------
-
-int OpenDevice(long board_address);
-int CloseDevice();
-
-long ReadAnalogChannel(long Channelno);
-
-int OutputAnalogChannel(long channel, long data);
-
-int ReadDigitalChannel(long channel);
-int SetDigitalChannel(long channel);
-int ClearDigitalChannel(long channel);
-
-int SetAllDigital();
-int ClearAllDigital();
-int SetAllAnalog();
-int ClearAllAnalog();
-
-long ReadCounter(long counterno);
-int ResetCounter(long counternr);
-int SetCounterDebounceTime(long counterno, long debouncetime);
-
-*/
 
