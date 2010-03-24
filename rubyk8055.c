@@ -337,10 +337,12 @@ void Init_rubyk8055() {
     rb_define_method(RubyK8055, "reset_counter", method_reset_counter, 1);
     rb_define_method(RubyK8055, "set_debounce", method_set_debounce, 2);
 
-    // reopen the class and define some handy attr_accessors..
+    // reopen the class and define some handy attr_accessors.. (and some pseudo-alias methods)
     rb_eval_string("module USB \n\
                         class RubyK8055 \n\
                             attr_accessor :connected, :board_address \n\
+                            def digital_on(c); set_digital(c, true); end \n\
+                            def digital_off(c); set_digital(c, false); end \n\
                         end \n\
                     end");
 }

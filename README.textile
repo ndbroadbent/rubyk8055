@@ -42,7 +42,9 @@ h4. Methods (with required params)
 | set_analog_max | channel | Sets the value of the specified analog output channel to max value (255). |
 | set_analog_min | channel | Sets the value of the specified analog output channel to min value (0). |
 | get_digital | channel | Returns the value of the specified digital input channel. |
-| set_digital | channel, value | Sets the value of the specified digital output channel. |
+| digital_on | channel | Sets the value of the specified digital output channel to true. |
+| digital_off | channel | Sets the value of the specified digital output channel to false. |
+| set_digital | channel, value | Sets the specified digital output channel to the given value. |
 | write_all_digital | value | Writes all outputs at once with 1 byte (containing each output as 1 bit). |
 | set_all_digital | | Sets all digital outputs to true. |
 | clear_all_digital | | Sets all digital outputs to false. |
