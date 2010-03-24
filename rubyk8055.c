@@ -117,13 +117,6 @@ static VALUE method_disconnect(VALUE self) {
     return Qfalse;
 }
 
-static VALUE method_address(VALUE self) {
-    if (check_connection(self)) {
-        return INT2NUM(rb_iv_get(self, "@board_address")); // int2num returns 0 instead of false.
-    }
-    return Qfalse;
-}
-
 static VALUE method_get_analog(VALUE self, long channel) {
     if (check_connection(self)) {
         channel = NUM2INT(channel);
@@ -322,7 +315,6 @@ void Init_rubyk8055() {
 
     rb_define_method(RubyK8055, "connect", method_connect, -1);
     rb_define_method(RubyK8055, "disconnect", method_disconnect, 0);
-    rb_define_method(RubyK8055, "address", method_address, 0);
 
     rb_define_method(RubyK8055, "get_analog", method_get_analog, 1);
     rb_define_method(RubyK8055, "set_analog", method_set_analog, 2);
@@ -345,6 +337,12 @@ void Init_rubyk8055() {
     rb_define_method(RubyK8055, "reset_counter", method_reset_counter, 1);
     rb_define_method(RubyK8055, "set_debounce", method_set_debounce, 2);
 
+    // reopen the class and define some handy attr_accessors
+    rb_eval_string("module USB \n\
+                        class RubyK8055 \n\
+                            attr_accessor :connected, :board_address \n\
+                        end \n\
+                    end");
 }
 
 

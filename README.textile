@@ -29,7 +29,8 @@ h4. Methods (with required params)
 |_. Method |_. Params |_. Description |
 | connect | address=0 | Connects to the K8055 board. |
 | disconnect | | Terminates the current connection. |
-| address | | Returns the address that the board is connected on. |
+| connected | | attr_accessor for @connected. |
+| board_address | | attr_accessor for @board_address. |
 | get_analog | channel | Returns the value of the specified analog input channel. |
 | set_analog | channel, value | Sets the value of the specified analog output channel. |
 | set_analog_max | channel | Sets the value of the specified analog output channel to max value (255). |
