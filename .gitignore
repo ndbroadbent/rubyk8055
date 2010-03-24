@@ -1,5 +1,4 @@
 Makefile
-irb_test.rb
 libk8055.o
 rubyk8055.o
 rubyk8055.so
