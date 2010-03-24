@@ -38,7 +38,7 @@ h4. Methods (with required params)
 | set_all_analog | | Sets all analog outputs to true. |
 | clear_all_analog | | Sets all analog outputs to false. |
 | all_inputs | | Returns an array with the following values: [dinp1, dinp2, dinp3, dinp4, dinp5, ainp1, ainp2, ctr1, ctr2]. |
-| to_s | | Returns all inputs, formatted as a ';' separated string.
+| to_s | | Returns all inputs, formatted as a ';' separated string. |
 | read_counter | counter_index | Reads the value of the counter at the specified index. |
 | reset_counter | counter_index | Resets the specified counter to 0. |
 | set_debounce | counter_index, time (ms) | Sets debounce time for the specified counter. |
