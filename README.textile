@@ -6,7 +6,9 @@ K8055 board working under linux first.
 
 h3. Compiling and Installing
 
-* To compile the wrapper, you must have the 'libusb' (v 0.1.12 or lower) library installed.
+* To compile the wrapper, you must have the 'libusb' (v 0.1.12 or lower) library installed, as well as 'libusb-dev'
+
+bc. sudo apt-get install libusb-dev
 
 bc. ruby extconf.rb
 make
